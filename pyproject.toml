@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "broadside-cycif-annotate-unmix"
+version = "0.1.0"
+description = "Annotation and unmixing for the Laboratory for Bio-Micro Devices @ BWH"
+readme = "README.md"
+license = "LICENSE"
+authors = ["Sebastian Ahn <wahn1@bwh.harvard.edu>"]
+keywords = [
+    "microscopy",
+    "imaging",
+    "bio-imaging"
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Image Processing"
+]
+repository = "https://github.com/biomicrodev/broadside-cycif-annotate-unmix"
+homepage = "https://jonaslab.bwh.harvard.edu"
+packages = [{ include = "broadside", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.12"
+bokeh = ">=2.4.2,<3"
+bmd-perf = { git = "https://github.com/biomicrodev/bmd-perf.git", branch = "master" }
+dask = "^2023.3.1"
+distributed = "^2023.3.2.1"
+matplotlib = "^3.7.1"
+napari = { version = "^0.4", extras = ["pyside2"] }
+natsort = "^8.3.1"
+numpy = "^1.24.2"
+ome-types = "^0.3.3"
+ome-zarr = "^0.6.1"
+picasso = { git = "https://github.com/biomicrodev/picasso.git", branch = "master" }
+pillow = "^9.4.0"
+pint = "^0.20.1"
+pooch = "^1.7.0"
+scikit-image = "^0.20.0"
+tifffile = "^2023.2.28"
+zarr = "^2.14.2"
+structlog = "^23.1.0"
+
+[tool.poetry.group.dev.dependencies]
+black = { version = "^23.1", extras = ["d"] }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
